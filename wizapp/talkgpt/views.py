@@ -40,7 +40,7 @@ from django.views.generic import View
 from django.utils.decorators import method_decorator
 
 from slickrpc import Proxy
-from django_cors_headers.decorators import cors_headers
+from django_corsheaders.decorators import cors_headers
 from gtts import gTTS
 from datetime import datetime, timedelta
 

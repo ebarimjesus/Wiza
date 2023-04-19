@@ -153,6 +153,7 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
+    'corsheaders',
     'cms',
     'menus',
     'sekizai',
@@ -183,7 +184,7 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'email_validator',
-    'corsheaders',
+    
     'wizapp'
 ]
 
