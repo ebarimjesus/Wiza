@@ -19,3 +19,13 @@ urlpatterns += i18n_patterns(path("admin/", admin.site.urls), path("", include("
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+from django.urls import path
+from talkgpt.views import talkgpt, send_message, stream_response
+
+urlpatterns = [
+    path("talkgpt/", talkgpt, name="talkgpt"),
+    path("send_message/", send_message, name="send_message"),
+    path("stream_response/", stream_response, name="stream_response"),
+]

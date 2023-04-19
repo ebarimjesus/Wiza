@@ -134,6 +134,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
@@ -181,6 +182,8 @@ INSTALLED_APPS = [
     'djangocms_style',
     'djangocms_googlemap',
     'djangocms_video',
+    'email_validator',
+    'corsheaders',
     'wizapp'
 ]
 
@@ -327,6 +330,7 @@ LANGUAGE_COOKIE_SECURE = False
 LANGUAGE_COOKIE_HTTPONLY = False
 LANGUAGE_COOKIE_SAMESITE = None
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 
 CMS_TEMPLATES = (
