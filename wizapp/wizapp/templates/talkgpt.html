@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="wrapper">
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <h1>TalkGPT</h1>
+                <select id="voice-dropdown">
+                    {% for option in voice_options %}
+                    <option value="{{ option.id }}">{{ option.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="chat-messages">
+                <ul id="messages"></ul>
+            </div>
+
+            <div class="chat-input">
+                <button id="start-recording-btn">Use Microphone</button>
+                <input type="text" id="user-input" placeholder="Or type your query here..." style="height: 40px; min-height: 40px;" oninput="this.style.height = (this.scrollHeight > this.clientHeight) ? (this.scrollHeight + 'px') : '40px';">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="{% static 'talkgpt/app.js' %}"></script>
+    <script type="text/javascript" src="{% static 'talkgpt/profile.js' %}"></script>
+{% endblock %}

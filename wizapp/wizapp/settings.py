@@ -453,3 +453,50 @@ STORAGES = {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
+
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.SHA1PasswordHasher',
+    'django.contrib.auth.hashers.MD5PasswordHasher',
+    'django.contrib.auth.hashers.UnsaltedSHA1PasswordHasher',
+    'django.contrib.auth.hashers.UnsaltedMD5PasswordHasher',
+    'django.contrib.auth.hashers.CryptPasswordHasher',
+]
+
+
+LANGUAGES = [
+    ('en-us', 'English (United States)'),
+    # add other languages here as needed
+]
+
+
+
+CMS_LANGUAGES = {
+    'default': {
+        'public': True,
+        'hide_untranslated': False,
+        'fallbacks': ['en'],
+        'redirect_on_fallback': True,
+        'code': 'en',
+        'name': 'English',
+        'public': True,
+    },
+    'fr': {
+        'public': True,
+        'hide_untranslated': False,
+        'fallbacks': ['en'],
+        'redirect_on_fallback': True,
+        'code': 'fr',
+        'name': 'French',
+        'public': True,
+    },
+    # add more languages here...
+}
+
+LANGUAGE_CODE = 'en-us'
+
