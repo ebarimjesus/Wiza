@@ -371,7 +371,7 @@ LOGIN_URL = "/accounts/login/"
 
 LOGIN_REDIRECT_URL = "/accounts/profile/"
 
-LOGOUT_REDIRECT_URL = None
+LOGOUT_REDIRECT_URL = "/"
 
 # The number of seconds a password reset link is valid for (default: 3 days).
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 24 * 3
@@ -419,13 +419,32 @@ EMAIL_SSL_KEYFILE = None
 EMAIL_TIMEOUT = None
 
 
+# People who get code error notifications. In the format
+# [('Full Name', 'email@example.com'), ('Full Name', 'anotheremail@example.com')]
+
+ADMINS = [
+    ('Fortune Ebarim', 'ebarim@wiztech.site'),
+]
+
 # Not-necessarily-technical managers of the site. They get broken link
 # notifications and other various emails.
 MANAGERS = ADMINS
 
-# People who get code error notifications. In the format
-# [('Full Name', 'email@example.com'), ('Full Name', 'anotheremail@example.com')]
-ADMINS = []
+
+
+# Default form rendering class.
+FORM_RENDERER = "django.forms.renderers.DjangoTemplates"
 
 
 
+# Default file storage mechanism that holds media.
+DEFAULT_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
+    },
+}
