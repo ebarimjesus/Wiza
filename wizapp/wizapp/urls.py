@@ -36,3 +36,8 @@ urlpatterns += [
     path('examples/', ExamplesPageView.as_view(), name='examples'),
     path('talkgpt/', talkgpt, name='talkgpt'),
 ]
+
+
+urlpatterns += [
+    url(r'^taggit_autosuggest/', include('taggit_autosuggest.urls')),
+]

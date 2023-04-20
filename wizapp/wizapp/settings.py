@@ -184,10 +184,37 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'email_validator',
+
+    'aldryn_apphooks_config',
+    'parler',
+    'taggit',
+    'taggit_autosuggest',
+    'meta',
+    'sortedm2m',
+    'djangocms_blog',
     
     'wizapp',
     'talkgpt'
 ]
+
+
+PARLER_DEFAULT_LANGUAGE_CODE = 'en'
+
+
+PARLER_LANGUAGES = {
+None: (
+{'code': 'en',},
+{'code': 'en-us',},
+{'code': 'it',},
+{'code': 'nl',},
+),
+'default': {
+'fallbacks': ['en'], # defaults to PARLER_DEFAULT_LANGUAGE_CODE
+'hide_untranslated': False, # the default; let .active_translations() ˓→return fallbacks too.
+}
+}
+
+
 
 LANGUAGES = (
     ## Customize this
@@ -367,6 +394,9 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+META_SITE_PROTOCOL = 'https'  # set 'http' for non ssl enabled websites
+META_USE_SITES = True
 
 
 AUTH_USER_MODEL = "auth.User"
