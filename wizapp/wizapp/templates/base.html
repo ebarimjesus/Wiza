@@ -27,6 +27,32 @@
                 float: left;
                 width: 20%;
             }
+            /* Styles for the footer */
+            .footer {
+                background-color: #222;
+                color: #fff;
+                padding: 5px;
+                text-align: center; /* Center the copyright notice */
+                bottom: 0; /* Set the footer to the bottom of the page */
+                width: 100%; /* Set the width of the footer to 100% */
+                flex-shrink: 0;
+                position: fixed;
+            }
+
+            .page /
+                width: 100%; / Set the width of the footer to 100% */
+            }
+
+            .footer span {
+                font-weight: bold; /* Make the company name bold */
+            }
+
+            /* Media queries for responsive design */
+            @media (max-width: 768px) {
+            .wrapper {
+                flex-direction: column;
+            }
+
         </style>
         {% render_block "css" %}
     </head>
@@ -39,5 +65,54 @@
             {% block content %}{% endblock content %}
         </div>
         {% render_block "js" %}
+
+        {% include "consent.html" %}
+        
+        <div>  
+            <footer class="bg-dark text-light py-3">
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <h4>Contact Us</h4>
+                    <p>Calabar,</p>
+                    <p>Cross River State, Nigeria.</p>
+                    <p>Phone: +234 09124766218</p>
+                    <p>Email: info@wiztech.site</p>
+                    <p>USA Phone: +1 507-512-3788</p>
+                  </div>
+                  <div class="col-sm-4">
+                    <h4>Connect</h4>
+                    <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com/wiztechnol">Facebook</a></li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="https://www.linkedin.com/company/wiz-fractal-technologies">LinkedIn</a></li>
+                    </ul>
+                    <img src="/static/images/fractal11.png" alt="Option 1 Image">
+                  </div>
+                  <div class="col-sm-4">
+                    <h4>About Us</h4>
+                    <p><a href="/team">Team Members</a></p>
+                    <p><a href="/privacy">Privacy Policy</a></p>
+                    <p><a href="https://explorer2.wizapp.online" target="_blank">NATURE Explorer</a></p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+            <footer class="bg-dark text-center text-lg-start">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <small>© 2023 Wiz Fractal Technologies. All Rights Reserved.</small>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-12">
+                    <p class="text-center mb-0">Powered By ZingyPay &amp; Nature Smartchain &amp; OPENAI | Amazon Polly</p>
+                    <p class="text-center mb-0">Made With ❤️ By WIZTECH</p>
+                  </div>
+                </div>
+              </div>
+            </footer>
+          </div> 
     </body>
 </html>

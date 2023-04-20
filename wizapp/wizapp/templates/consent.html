@@ -1,0 +1,75 @@
+<html>
+<head>
+  <style>
+    .consent-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #19c9c1;
+      padding: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+    }
+
+    .consent-banner p {
+      margin: 0;
+    }
+
+    .consent-banner a {
+      color: #4e4e4e;
+      text-decoration: underline;
+    }
+
+    .consent-buttons {
+      margin-top: 10px;
+    }
+
+    .consent-buttons button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-right: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .consent-buttons button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <div class="consent-banner">
+    <p>This website uses cookies to improve your browsing experience. Please review our <a href="/privacy-policy">privacy policy</a> to learn more.</p>
+    <div class="consent-buttons">
+      <button id="accept-btn">Accept</button>
+      <button id="reject-btn">Reject</button>
+    </div>
+  </div>
+
+  <script>
+    const acceptBtn = document.querySelector('#accept-btn');
+    const rejectBtn = document.querySelector('#reject-btn');
+    const consentBanner = document.querySelector('.consent-banner');
+
+    acceptBtn.addEventListener('click', () => {
+      // Set a cookie to indicate that the user has accepted the consent
+      document.cookie = "consent=accepted";
+      // Hide the consent banner
+      consentBanner.style.display = 'none';
+    });
+
+    rejectBtn.addEventListener('click', () => {
+      // Set a cookie to indicate that the user has rejected the consent
+      document.cookie = "consent=rejected";
+      // Disable the accept and reject buttons
+      acceptBtn.disabled = false;
+      rejectBtn.disabled = false;
+    });
+  </script>
+</body>
+</html>
+
+

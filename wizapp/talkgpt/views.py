@@ -16,7 +16,7 @@ import speech_recognition as sr
 
 from gtts import gTTS
 
-openai.api_key = "sk-RDITFbLRYJrcwP6WB1XJ9"
+openai.api_key = "sk-RDITFbLRYJrcwHF6WB1XJ9"
 
 
 
@@ -43,7 +43,7 @@ def send_message(request):
     # logic to send the message
     return HttpResponse('Message sent successfully')
 
-
+    
 
 def talkgpt(request):
     voice_options = get_voice_options()
