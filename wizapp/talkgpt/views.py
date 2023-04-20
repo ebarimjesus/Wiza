@@ -22,7 +22,7 @@ from django.http import HttpResponse
 
 
 
-openai.api_key = "sk-RDITFbLRYJrcQA3iuYP6WB1XJ9"
+openai.api_key = "sk-RDITFbLRYJrcB1XJ9"
 
 
 
@@ -46,7 +46,7 @@ class ExamplesPageView(TemplateView):
         context["voice_options"] = get_voice_options()
         return context
 
-
+        
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

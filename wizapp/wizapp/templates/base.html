@@ -1,11 +1,10 @@
 {% load cms_tags menu_tags sekizai_tags %}
+
 <!doctype html>
 <html>
     <head>
         <title>{% block title %}This is my new project home page{% endblock title %}</title>
         <meta name="viewport" content="width=device-width,initial-scale=1">
-
-
         <style type="text/css">
             .nav {
                 padding-left: 0;
@@ -17,7 +16,7 @@
             }
             .container {
                 width: 940px;
-                margin: 0 auto
+                margin: 0 auto;
             }
             .content {
                 float: left;
@@ -38,21 +37,22 @@
                 flex-shrink: 0;
                 position: fixed;
             }
-
-            .page /
-                width: 100%; / Set the width of the footer to 100% */
+    
+            .page {
+                width: 100%; /* Set the width of the footer to 100% */
             }
-
+    
             .footer span {
                 font-weight: bold; /* Make the company name bold */
             }
-
+    
             /* Media queries for responsive design */
             @media (max-width: 768px) {
-            .wrapper {
-                flex-direction: column;
+                .wrapper {
+                    flex-direction: column;
+                }
             }
-
+    
         </style>
         {% render_block "css" %}
     </head>
@@ -66,7 +66,7 @@
             {% block content %}{% endblock content %}
         </div>
         {% render_block "js" %}
-
+    
         {% include "consent.html" %}
         
         <div>  
@@ -97,23 +97,23 @@
                     <p><a href="https://explorer2.wizapp.online" target="_blank">NATURE Explorer</a></p>
                   </div>
                 </div>
-              </div>
-            </footer>
-            <footer class="bg-dark text-center text-lg-start">
-              <div class="container">
+            </div>
+        </footer>
+        <footer class="bg-dark text-center text-lg-start">
+            <div class="container">
                 <div class="row">
-                  <div class="col-lg-12">
-                    <small>© 2023 Wiz Fractal Technologies. All Rights Reserved.</small>
-                  </div>
+                    <div class="col-lg-12">
+                        <small>© 2023 Wiz Fractal Technologies. All Rights Reserved.</small>
+                    </div>
                 </div>
                 <div class="row">
-                  <div class="col-lg-12">
-                    <p class="text-center mb-0">Powered By ZingyPay &amp; Nature Smartchain &amp; OPENAI | Amazon Polly</p>
-                    <p class="text-center mb-0">Made With ❤️ By WIZTECH</p>
-                  </div>
+                    <div class="col-lg-12">
+                        <p class="text-center mb-0">Powered By ZingyPay &amp; Nature Smartchain &amp; OPENAI | Amazon Polly</p>
+                        <p class="text-center mb-0">Made With ❤️ By WIZTECH</p>
+                    </div>
                 </div>
-              </div>
-            </footer>
-          </div> 
+            </div>
+        </footer>
+    </div>
     </body>
-</html>
+    </html>
