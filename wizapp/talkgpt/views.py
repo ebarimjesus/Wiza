@@ -22,7 +22,7 @@ from django.http import HttpResponse
 
 
 
-openai.api_key = "sk-RDITFbLRYJrcB1XJ9"
+openai.api_key = "sk-RDITFbJ0H9vPIQA3iuYP6WB1XJ9"
 
 
 

@@ -18,7 +18,7 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": {"cmspages": CMSSitemap}}),
     path('admin/', admin.site.urls),
     path('en/talkgpt/', include('talkgpt.urls')),
-    
+
 ]
 
 urlpatterns += i18n_patterns(path("", include("cms.urls")))
