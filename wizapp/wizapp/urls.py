@@ -9,6 +9,8 @@ from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from django.urls import include, path
 from talkgpt.views import send_message, stream_response
+from talkgpt.views import LandingPageView
+from talkgpt.views import ExamplesPageView, talkgpt
 
 admin.autodiscover()
 
@@ -29,4 +31,7 @@ urlpatterns += [
     path("send_message/", send_message, name="send_message"),
     path("stream_response/", stream_response, name="stream_response"),
     path('send_message', RedirectView.as_view(url='/send_message/', permanent=True)),
+    path('', LandingPageView.as_view(), name='landing'),
+    path('examples/', ExamplesPageView.as_view(), name='examples'),
+    path('talkgpt/', talkgpt, name='talkgpt'),
 ]

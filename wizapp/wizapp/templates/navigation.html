@@ -8,28 +8,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="{{ url_for('home') }}" class="nav-link px-2 text-secondary">Home</a></li>
-            <li><a href="{{ url_for('examples') }}" class="nav-link px-2 text-secondary">Query Examples</a></li>
-            <li><a href="{{ url_for('talkgpt') }}" class="nav-link px-2 text-secondary">TalkGPT</a></li>
-            <li><a href="{{ url_for('mobile') }}" class="nav-link px-2 text-secondary">Mobile Apps</a></li>
-            <li><a href="{{ url_for('coder') }}" class="nav-link px-2 text-secondary">Code Generator</a></li>
-            <li><a href="{{ url_for('editor') }}" class="nav-link px-2 text-secondary">Amanuensis</a></li>
-            <li><a href="{{ url_for('image_generator') }}" class="nav-link px-2 text-secondary">Image Generator</a></li>
-            <li><a href="{{ url_for('transcriber') }}" class="nav-link px-2 text-secondary">Transcriber</a></li>
-            <li><a href="https://www.wiztech.site/shop" target="_blank" rel="noopener" class="nav-link px-2 text-secondary">Wiz Store</a></li>
-            <li><a href="https://exchange.wiztech.site" target="_blank" rel="noopener" class="nav-link px-2 text-secondary">Wiz Exchange</a></li>
-            <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account <b class="caret"></b></a>
-            <ul class="dropdown-menu">
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <li><a href="{{ url_for('profile') }}">Profile</a></li>
-            </ul>
-           </li>
+                <a href="{% url 'landing' %}">Home</a>
+                <a href="{% url 'examples' %}">Query Examples</a>
+                <a href="{% url 'talkgpt' %}">TalkGPT</a>
           </ul>
       </div>
     </div>
   </nav>
 
-  
   
