@@ -16,22 +16,32 @@ import speech_recognition as sr
 
 from gtts import gTTS
 
-openai.api_key = "
+openai.api_key = "sk-RDITFbLRYJrcwP6WB1XJ9"
 
 
-# Create your views here.
+
 MODEL = "gpt-3.5-turbo-0301"
 
 
-def get_voice_options():
-    voices = pyttsx3.init().getProperty('voices')
-    voice_options = []
-    for voice in voices:
-        name = voice.name
-        gender = voice.gender
-        language = voice.languages[0]
-        voice_options.append({'name': name, 'gender': gender, 'language': language})
-    return voice_options
+
+
+from django.views.generic import TemplateView
+from talkgpt.utils import get_voice_options
+
+class LandingPageView(TemplateView):
+    template_name = "landing.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['voice_options'] = get_voice_options()
+        return context
+
+from django.http import HttpResponse
+
+def send_message(request):
+    message = request.POST.get('message', '')
+    # logic to send the message
+    return HttpResponse('Message sent successfully')
 
 
 

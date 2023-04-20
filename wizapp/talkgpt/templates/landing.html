@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Landing Page</title>
+</head>
+<body>
+    <h1>Welcome to our website!</h1>
+    <p>Please select your preferred voice:</p>
+    <select name="voice" id="voice">
+        {% for option in voice_options %}
+        <option value="{{ option.value }}">{{ option.label }}</option>
+        {% endfor %}
+    </select>
+</body>
+</html>
+
+

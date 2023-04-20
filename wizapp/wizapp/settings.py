@@ -185,7 +185,8 @@ INSTALLED_APPS = [
     'djangocms_video',
     'email_validator',
     
-    'wizapp'
+    'wizapp',
+    'talkgpt'
 ]
 
 LANGUAGES = (
@@ -475,28 +476,42 @@ LANGUAGES = [
 ]
 
 
-
 CMS_LANGUAGES = {
+    1: [
+        {
+            'code': 'en',
+            'name': gettext('English'),
+            'fallbacks': ['de', 'fr'],
+            'public': True,
+            'hide_untranslated': False,
+            'redirect_on_fallback': True,
+        },
+        {
+            'code': 'de',
+            'name': gettext('German'),
+            'fallbacks': ['en', 'fr'],
+            'public': True,
+            'hide_untranslated': False,
+            'redirect_on_fallback': True,
+        },
+        {
+            'code': 'fr',
+            'name': gettext('French'),
+            'fallbacks': ['en', 'de'],
+            'public': True,
+            'hide_untranslated': False,
+            'redirect_on_fallback': True,
+        },
+    ],
     'default': {
+        'fallbacks': ['en', 'de', 'fr'],
+        'redirect_on_fallback': True,
         'public': True,
         'hide_untranslated': False,
-        'fallbacks': ['en'],
-        'redirect_on_fallback': True,
-        'code': 'en',
-        'name': 'English',
-        'public': True,
     },
-    'fr': {
-        'public': True,
-        'hide_untranslated': False,
-        'fallbacks': ['en'],
-        'redirect_on_fallback': True,
-        'code': 'fr',
-        'name': 'French',
-        'public': True,
-    },
-    # add more languages here...
 }
+
+
 
 LANGUAGE_CODE = 'en-us'
 
