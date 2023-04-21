@@ -22,7 +22,7 @@ from django.http import HttpResponse
 
 
 
-openai.api_key = "sk-RDITFbLRYJrcwHF9vPIQA3iuYP6WB1XJ9"
+openai.api_key = "sk-RDITFbLRYJrcwHFB4A3iuYP6WB1XJ9"
 
 
 
@@ -60,8 +60,12 @@ def send_message(request):
     # logic to send the message
     return HttpResponse('Message sent successfully')
 
-    
+ 
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST
 
+@csrf_exempt
+@require_POST
 def talkgpt(request):
     voice_options = get_voice_options()
     completion = openai.ChatCompletion.create(
