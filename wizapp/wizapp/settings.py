@@ -96,7 +96,7 @@ INSTALLED_APPS = ['djangocms_admin_style', 'django.contrib.auth',
     'djangocms_style', 'djangocms_googlemap', 'djangocms_video',
     'email_validator', 'wizapp', 'talkgpt', 'aldryn_apphooks_config',
     'parler', 'taggit', 'taggit_autosuggest', 'meta', 'djangocms_blog',
-    'sortedm2m', 'aldryn_search', 'faq' ]
+    'sortedm2m', 'aldryn_search', 'faq', 'profiles' ]
 CMS_LANGUAGES = {(1): [{'code': 'en', 'name': gettext('en'),
     'redirect_on_fallback': True, 'public': True, 'hide_untranslated': 
     False}], 'default': {'redirect_on_fallback': True, 'public': True,
@@ -183,7 +183,9 @@ META_USE_OG_PROPERTIES = True
 META_USE_TWITTER_PROPERTIES = True
 META_USE_GOOGLEPLUS_PROPERTIES = True
 META_USE_SCHEMAORG_PROPERTIES = True
-AUTH_USER_MODEL = 'auth.User'
+AUTH_USER_MODEL = 'auth.User' 
+
+
 AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/accounts/profile/'
