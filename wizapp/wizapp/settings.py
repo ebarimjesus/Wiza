@@ -1,3 +1,6 @@
+from django.utils.translation import gettext_lazy as _
+
+
 from django.utils.translation import gettext_noop
 import os
 gettext = lambda s: s
@@ -245,4 +248,24 @@ PARLER_LANGUAGES = {
         'hide_untranslated': False,   # the default; let .active_translations() return fallbacks too.
     }
 }
+
+BLOG_AVAILABLE_PERMALINK_STYLES = (
+    ('full_date', _('Full date')),
+    ('short_date', _('Year /  Month')),
+    ('category', _('Category')),
+)
+BLOG_PERMALINK_URLS = {
+    "full_date": "<int:year>/<int:month>/<int:day>/<str:slug>/",
+    "short_date": "<int:year>/<int:month>/<str:slug>/",
+    "category": "<str:category>/<str:slug>/",
+}
+
+
+BLOG_PLUGIN_TEMPLATE_FOLDERS = (
+    ('plugins', _('Default template')),    # reads from templates/djangocms_blog/plugins/
+    ('timeline', _('Vertical timeline')),  # reads from templates/djangocms_blog/vertical/
+    ('masonry', _('Masonry style')),       # reads from templates/djangocms_blog/masonry/
+)
+
+
 
