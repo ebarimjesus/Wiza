@@ -96,7 +96,7 @@ INSTALLED_APPS = ['djangocms_admin_style', 'django.contrib.auth',
     'djangocms_style', 'djangocms_googlemap', 'djangocms_video',
     'email_validator', 'wizapp', 'talkgpt', 'aldryn_apphooks_config',
     'parler', 'taggit', 'taggit_autosuggest', 'meta', 'djangocms_blog',
-    'sortedm2m', 'aldryn_search' ]
+    'sortedm2m', 'aldryn_search', 'faq' ]
 CMS_LANGUAGES = {(1): [{'code': 'en', 'name': gettext('en'),
     'redirect_on_fallback': True, 'public': True, 'hide_untranslated': 
     False}], 'default': {'redirect_on_fallback': True, 'public': True,
