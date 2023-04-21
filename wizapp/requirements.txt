@@ -22,6 +22,7 @@ Pillow>=3.0
 six
 pytz
 djangocms-blog
+djangocms-blog[search]
 
 
 
