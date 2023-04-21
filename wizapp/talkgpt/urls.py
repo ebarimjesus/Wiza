@@ -11,9 +11,6 @@ urlpatterns = [
     path('', LandingPageView.as_view(), name='landing'),
     path('talkgpt/', views.talkgpt, name='talkgpt'),
     path('examples/', ExamplesPageView.as_view(), name='examples'),
-
-
-    # other URL patterns specific to the talkgpt app
 ]
 
 
