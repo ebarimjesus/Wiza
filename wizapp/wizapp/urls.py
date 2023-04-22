@@ -9,21 +9,18 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
 from talkgpt.views import (
-    send_message, 
+    send_message,
     stream_response,
-    LandingPageView, 
-    ExamplesPageView, 
-    talkgpt, editor, 
-    image_generator, 
-    dalle, 
-    TranscriberView, 
-    CoderView, 
-    generate_code,  
+    LandingPageView,
+    ExamplesPageView,
+    talkgpt, TranscriberView,
+    CoderView,
+    generate_code,
     process_input,
     get_audio,
     play_audio,
     recognize_speech_from_mic,
-    get_voice_options, 
+    get_voice_options,
     set_voice_option
 )
 
@@ -32,7 +29,8 @@ from taggit_autosuggest import urls as taggit_autosuggest_urls
 admin.autodiscover()
 
 urlpatterns = [
-    re_path(r'^sitemap\.xml$', sitemap, {'sitemaps': {'cmspages': CMSSitemap}}),
+    re_path(r'^sitemap\.xml$', sitemap, {
+            'sitemaps': {'cmspages': CMSSitemap}}),
     path('admin/', admin.site.urls),
     path('en/talkgpt/', include('talkgpt.urls')),
 ]
@@ -41,13 +39,16 @@ urlpatterns += i18n_patterns(path("", include("cms.urls")))
 
 # This is only needed when using runserver.
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.STATIC_URL,
+                          document_root=settings.STATIC_ROOT)
 
 urlpatterns += [
     path('send_message/', send_message, name='send_message'),
     path('stream_response/', stream_response, name='stream_response'),
-    path('send_message', RedirectView.as_view(url='/send_message/', permanent=True)),
+    path('send_message', RedirectView.as_view(
+        url='/send_message/', permanent=True)),
     path('', LandingPageView.as_view(), name='landing'),
     path('talkgpt/', talkgpt, name='talkgpt'),
     path('examples/', ExamplesPageView.as_view(), name='examples'),
@@ -60,8 +61,10 @@ urlpatterns += [
     path('process_input/', process_input, name='process_input'),
     path('get-audio/', get_audio, name='get_audio'),
     path('play-audio/', play_audio, name='play_audio'),
-    path('recognize_speech_from_mic/', recognize_speech_from_mic, name='recognize_speech_from_mic'),
+    path('recognize_speech_from_mic/', recognize_speech_from_mic,
+         name='recognize_speech_from_mic'),
     path('get_voice_options/', get_voice_options, name='get_voice_options'),
-    path('set_voice_option/<str:option_id>/', set_voice_option, name='set_voice_option'),
+    path('set_voice_option/<str:option_id>/',
+         set_voice_option, name='set_voice_option'),
     path('taggit_autosuggest/', include(taggit_autosuggest_urls)),
 ]

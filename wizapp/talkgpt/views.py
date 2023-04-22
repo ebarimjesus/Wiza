@@ -84,7 +84,7 @@ def send_message(request):
 @csrf_exempt
 @require_POST
 def talkgpt(request):
-    voice_options = get_voice_options()
+    voice_options = get_voice_options(request)
     completion = openai.ChatCompletion.create(
         model=MODEL,
         max_tokens=3000,
@@ -145,11 +145,11 @@ def stream_response(prompt):
 
 
 def editor(request):
-    voice_options = get_voice_options()
+    voice_options = get_voice_options(request)
     return render(request, 'editor.html')
 
 def image_generator(request):
-    voice_options = get_voice_options()
+    voice_options = get_voice_options(request)
     return render(request, 'image_generator.html')
 
 @csrf_exempt
@@ -204,7 +204,7 @@ class TranscriberView(View):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        voice_options = get_voice_options()
+        voice_options = get_voice_options(request)
         return render(request, 'transcribe.html', {'voice_options': voice_options})
 
 class CoderView(View):
@@ -213,8 +213,9 @@ class CoderView(View):
         return super().dispatch(request, *args, **kwargs)
 
     def get(self, request, *args, **kwargs):
-        voice_options = get_voice_options()
+        voice_options = get_voice_options(request)
         return render(request, 'coder.html', {'voice_options': voice_options})
+
 
 @csrf_exempt
 def generate_code(request):
