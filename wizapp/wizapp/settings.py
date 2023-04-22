@@ -44,7 +44,7 @@ STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'wizapp', 'static'),
 SITE_ID = 1
 TEMPLATES = [{'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [os.path.join(BASE_DIR, 'wizapp', 'templates')], 'OPTIONS': {
+    'DIRS': [os.path.join(BASE_DIR, 'wizapp', 'talkgpt', 'templates')], 'OPTIONS': {
     'context_processors': ['django.contrib.auth.context_processors.auth',
     'django.contrib.messages.context_processors.messages',
     'django.template.context_processors.i18n',
@@ -188,11 +188,7 @@ LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/accounts/profile/'
 LOGOUT_REDIRECT_URL = '/'
 PASSWORD_RESET_TIMEOUT = 60 * 60 * 24 * 3
-PASSWORD_HASHERS = ['django.contrib.auth.hashers.PBKDF2PasswordHasher',
-    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
-    'django.contrib.auth.hashers.Argon2PasswordHasher',
-    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
-    'django.contrib.auth.hashers.ScryptPasswordHasher']
+
 AUTH_PASSWORD_VALIDATORS = []
 SIGNING_BACKEND = 'django.core.signing.TimestampSigner'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
