@@ -1,0 +1,54 @@
+{% extends "_base.html" %}
+{% block content %}
+
+<head>
+
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>IMAGE GENERATOR</title>
+
+
+
+    <script
+	type="module"
+	src="https://gradio.s3-us-west-2.amazonaws.com/3.23.0/gradio.js">
+	</script>
+</head>
+<body>
+
+
+        <gradio-app src="https://aniquel-wizapp-image-generator.hf.space"></gradio-app>
+
+
+                <!-- Facebook Share Button -->
+<div class="fb-share-button" data-href="{{ url }}" data-layout="button" data-size="small">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ url }}" class="fb-xfbml-parse-ignore">Share</a>
+</div>
+
+<!-- Load the Facebook SDK -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '{{ app_id }}',
+            xfbml: true,
+            version: 'v12.0'
+        });
+    };
+
+    (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+</body>
+
+{% endblock %}
+
+
